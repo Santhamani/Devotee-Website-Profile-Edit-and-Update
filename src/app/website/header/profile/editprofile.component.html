@@ -1,0 +1,83 @@
+
+
+
+<div class="container" style="margin-top:100px;">
+
+
+        <app-toast [message]="toast.message"></app-toast>
+        <!-- <button class="btn btn-sm btn-primary" (click)="enableEditing(profile)"><i class="fa fa-pencil"></i> Edit</button>  -->
+        <!-- <tbody>
+            <tr>
+                <td colspan="4">
+                  <form class="form-inline" #form="ngForm" (ngSubmit)="editProfile(id)">
+                    <input class="form-control mr-2" type="text" name="fname" placeholder="First Name" required>
+                    <input class="form-control mr-2" type="text" name="lname" placeholder="Last Name" min="0" required>
+                    <input class="form-control mr-2" type="text" name="dateofbirth" placeholder="Date of Birth" step="any" min="0" required>
+                    <input class="form-control mr-2" type="text" name="placeofbirth" placeholder="Place of Birth" step="any" min="0" required>
+                    <input class="form-control mr-2" type="time" name="timefbirth"  placeholder="Time of Birth">
+                    <input class="form-control mr-2" type="text" name="raasi" placeholder="Raasi" step="any" min="0" required>
+                    <input class="form-control mr-2" type="text" name="nakshatram" placeholder="Nakshatram" step="any" min="0" required>
+                    <input class="form-control mr-2" type="text" name="houseno" placeholder="House No" step="any" min="0" required>
+                    <input class="form-control mr-2" type="text" name="street"  placeholder="Street" step="any" min="0" required>
+                    <input class="form-control mr-2" type="text" name="city" placeholder="City" step="any" min="0" required>
+                    <input class="form-control mr-2" type="text" name="pin" placeholder="Pin Code" step="any" min="0" required>
+                    <input class="form-control mr-2" type="text" name="state" placeholder="State" step="any" min="0" required>
+                    <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
+                  </form>
+                </td>
+            </tr>
+        </tbody> -->
+
+        <form  [formGroup]="updateProfileForm" (ngSubmit)="editProfile()">
+          <div class="form-group input-field col s8"  [ngClass]="setClassFName()">
+              <input class="form-control" type="text" name="fname" formControlName="fname" placeholder="First Name">
+          </div>
+          <div class="form-group input-field col s8"  [ngClass]="setClassLName()">
+              <input class="form-control" type="text" name="lname" formControlName="lname" placeholder="Last Name">
+          </div>
+          <div class="form-group input-field col s8"  [ngClass]="setClassPhoneno()">
+              <input class="form-control" type="text" name="phoneno" formControlName="phoneno" placeholder="Contact Number">
+          </div>
+          <div class="form-group input-field col s8"  [ngClass]="setClassDateOfBirth()">
+              <input class="form-control" type="text" name="dateofbirth" formControlName="dateofbirth" placeholder="Date Of Birth">
+          </div>
+          <div class="form-group input-field col s8"  [ngClass]="setClassPlaceOfBirth()">
+              <input class="form-control" type="text" name="placeofbirth" formControlName="placeofbirth"  placeholder="Place of Birth">
+          </div>
+    
+          <div class="form-group input-field col s8"  [ngClass]="setClassTimeOfBirth()">
+            <input class="form-control" type="text" name="timeofbirth" formControlName="timeofbirth" placeholder="Time Of Birth" autofocus>
+          </div>
+          
+          <div class="form-group input-field col s8"  [ngClass]="setClassRaasi()">
+              <input class="form-control" type="text" name="raasi" formControlName="raasi" placeholder="Raasi">
+          </div>
+          
+          <div class="form-group input-field col s8"  [ngClass]="setClassNakshatram()">
+              <input class="form-control" type="text" name="nakshatram" formControlName="nakshatram" placeholder="Nakshatram">
+          </div>
+
+          <div class="form-group input-field col s8"  [ngClass]="setClassHouseNo()">
+              <input class="form-control" type="text" name="houseno" formControlName="houseno" placeholder="House No/ Flat No">
+          </div>
+
+          <div class="form-group input-field col s8"  [ngClass]="setClassStreet()">
+              <input class="form-control" type="text" name="street" formControlName="street" placeholder="Street/Landmark">
+          </div>
+
+          <div class="form-group input-field col s8"  [ngClass]="setClassCity()">
+              <input class="form-control" type="text" name="city" formControlName="city" placeholder="City/ Town/ Village">
+          </div>
+
+          <div class="form-group input-field col s8"  [ngClass]="setClassPin()">
+              <input class="form-control" type="text" name="pin" formControlName="pin" placeholder="Pin Code">
+          </div>
+
+          <div class="form-group input-field col s8"  [ngClass]="setClassState()">
+              <input class="form-control" type="text" name="state" formControlName="state" placeholder="State">
+          </div>
+
+          <button class="btn btn-primary" type="submit" [disabled]="!updateProfileForm.valid"><i class="fa fa-user-plus"></i>Save Profile</button>
+      </form>
+         
+</div>

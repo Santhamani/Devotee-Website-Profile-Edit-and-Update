@@ -1,0 +1,178 @@
+
+<!-- 
+<div class="body-container">
+    <p>
+        profile works!
+      </p>
+      <h1>{{ auth.currentUser.username}}</h1>
+      <h1>{{ auth.currentEmail.email}}</h1>
+</div> -->
+
+<div class="container body-container">
+
+ 
+
+    <table class="table table-hover">
+        <thead>
+          <th>
+            User Name
+          </th>
+          <th>
+            Email
+          </th>
+        </thead>
+        <tbody>
+          <td>
+              {{ auth.currentUser.username }}
+          </td>
+          <td>
+              {{ auth.currentEmail.email }}
+          </td>
+        </tbody>
+      </table>
+
+      <!-- <div class="card" *ngIf="!isLoading">
+        <h4 class="card-header">Account settings</h4>
+        <div class="card-body">
+          <form #userForm="ngForm" (ngSubmit)="save(user)">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+              </div>
+              <input class="form-control" type="text" name="username" [(ngModel)]="user.username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+              </div>
+              <input class="form-control" type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!#userForm.form.valid">
+              <i class="fa fa-save"></i> Save
+            </button>
+          </form>
+        </div>
+      </div> -->
+
+      <!-- <div class="card" *ngIf="!isLoading">
+        <h4 class="card-header">Account settings</h4>
+        <div class="card-body">
+          <form #userForm="ngForm" (ngSubmit)="save(profile)">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+              </div>
+              <input class="form-control" type="text" name="fname" [(ngModel)]="profile.fname" placeholder="First Name" required>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+              </div>
+              <input class="form-control" type="text" name="lname" [(ngModel)]="profile.lname" placeholder="Last Name" required>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!#userForm.form.valid">
+              <i class="fa fa-save"></i> Save
+            </button>
+          </form>
+        </div>
+      </div> -->
+      <!-- <button type="button" name="button" class="btn btn-default" *ngIf="!newPost" (click)="newBlogForm()">Add Profile</button> -->
+
+      <!-- <input disabled value="{{ auth.currentUser.username }}"> -->
+      <!-- <div class="" *ngIf="!newPost">
+        jkjskjdkla
+      </div> -->
+  
+      <!-- <div class="" *ngIf="newPost"> -->
+
+        <app-toast [message]="toast.message"></app-toast>
+
+       
+          <section class="hero">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-6 col-sm-6">
+                          <div class="card border-none">
+                              <div class="card-body">
+                             
+                                  <p class="mt-4 text lead text-center">
+                                      Update Your Profile here
+                                  </p>
+                                  <div class="mt-4">
+                                      <form  [formGroup]="profileForm" (ngSubmit)="addprofile()">
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassFName()">
+                                              <input class="form-control" type="text" name="fname" formControlName="fname" placeholder="First Name">
+                                          </div>
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassLName()">
+                                              <input class="form-control" type="text" name="lname" formControlName="lname" placeholder="Last Name">
+                                          </div>
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassPhoneno()">
+                                                <input class="form-control" type="text" name="phoneno" formControlName="phoneno" placeholder="Contact Number">
+                                            </div>
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassDateOfBirth()">
+                                              <input class="form-control" type="text" name="dateofbirth" formControlName="dateofbirth" placeholder="Date Of Birth">
+                                          </div>
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassPlaceOfBirth()">
+                                              <input class="form-control" type="text" name="placeofbirth" formControlName="placeofbirth"  placeholder="Place of Birth">
+                                          </div>
+                                    
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassTimeOfBirth()">
+                                            <input class="form-control" type="text" name="timeofbirth" formControlName="timeofbirth" placeholder="Time Of Birth" autofocus>
+                                          </div>
+                                          
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassRaasi()">
+                                              <input class="form-control" type="text" name="raasi" formControlName="raasi" placeholder="Raasi">
+                                          </div>
+                                          
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassNakshatram()">
+                                              <input class="form-control" type="text" name="nakshatram" formControlName="nakshatram" placeholder="Nakshatram">
+                                          </div>
+
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassHouseNo()">
+                                              <input class="form-control" type="text" name="houseno" formControlName="houseno" placeholder="House No/ Flat No">
+                                          </div>
+
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassStreet()">
+                                              <input class="form-control" type="text" name="street" formControlName="street" placeholder="Street/Landmark">
+                                          </div>
+
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassCity()">
+                                              <input class="form-control" type="text" name="city" formControlName="city" placeholder="City/ Town/ Village">
+                                          </div>
+
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassPin()">
+                                              <input class="form-control" type="text" name="pin" formControlName="pin" placeholder="Pin Code">
+                                          </div>
+
+                                          <div class="form-group input-field col s8"  [ngClass]="setClassState()">
+                                              <input class="form-control" type="text" name="state" formControlName="state" placeholder="State">
+                                          </div>
+
+                                          <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid"><i class="fa fa-user-plus"></i>Save Profile</button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <!-- <div class="col-lg-6">
+                          <div class="card border-none">
+                              <div class="card-body">
+                                <div class="mt-4">
+                                      {{profile.fname}}
+                                  </div>
+                              </div>
+                          </div>
+                      </div> -->
+                  </div>
+              </div>
+          </section>
+  
+      <!-- </div> -->
+      <!-- <button type="button" name="button" class="btn btn-default" *ngIf="newPost" (click)="newBlogForm()">Add Profile</button> -->
+  
+
+</div>
+
+
